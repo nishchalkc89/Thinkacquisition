@@ -1,23 +1,23 @@
 import { createBrowserRouter } from "react-router";
 import { Layout } from "./components/Layout";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Training } from "./pages/Training";
+import { HomeNew } from "./pages/HomeNew";
+import { AboutNew } from "./pages/AboutNew";
+import { TrainingNew } from "./pages/TrainingNew";
 import { BusinessDevelopment } from "./pages/BusinessDevelopment";
 import { Resources } from "./pages/Resources";
-import { Contact } from "./pages/Contact";
+import { ContactNew } from "./pages/ContactNew";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <Home /> },
-      { path: "about", element: <About /> },
-      { path: "training", element: <Training /> },
+      { index: true, element: <HomeNew /> },
+      { path: "about", element: <AboutNew /> },
+      { path: "training", element: <TrainingNew /> },
       { path: "business-development", element: <BusinessDevelopment /> },
       { path: "resources", element: <Resources /> },
-      { path: "contact", element: <Contact /> },
+      { path: "contact", element: <ContactNew /> },
     ],
   },
 ]);

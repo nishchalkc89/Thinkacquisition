@@ -6,7 +6,7 @@ export function Home() {
     <div>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1E3A8A] via-[#2563EB] to-[#1E40AF]">
+        <div className="absolute inset-0 hero-gradient">
           <div className="absolute inset-0 opacity-20">
             <img
               src="https://images.unsplash.com/photo-1762075314731-43d62a33c1f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnb3Zlcm5tZW50JTIwYnVpbGRpbmclMjBwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3xlbnwxfHx8fDE3NzExNTk3NTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -17,33 +17,33 @@ export function Home() {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block mb-6">
-            <div className="bg-[#FDB913] px-6 py-2 rounded-full">
+          <div className="inline-block mb-6 animate-[fadeInUp_0.6s_ease-out]">
+            <div className="bg-[#FDB913] px-6 py-2 rounded-full shadow-professional">
               <p className="text-[#1E3A8A] font-bold">26 Years of Excellence</p>
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight animate-[fadeInUp_0.8s_ease-out]">
             Federal Acquisition
             <br />
             <span className="text-[#FDB913]">Expertise That Delivers</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white mb-12 max-w-3xl mx-auto animate-[fadeInUp_1s_ease-out]">
             Empowering federal teams with strategic consulting, training, and development services 
             in procurement, acquisition, and program management.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-[fadeInUp_1.2s_ease-out]">
             <Link 
               to="/training"
-              className="bg-[#FDB913] text-[#1E3A8A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+              className="btn-primary bg-[#FDB913] text-[#1E3A8A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:shadow-professional-xl transition-all transform hover:scale-105 flex items-center justify-center gap-2"
             >
               Explore Training <ArrowRight />
             </Link>
             <Link 
               to="/contact"
-              className="bg-white text-[#1E3A8A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all transform hover:scale-105"
+              className="bg-white text-[#1E3A8A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 hover:shadow-professional-lg transition-all transform hover:scale-105"
             >
               Get In Touch
             </Link>
@@ -68,8 +68,8 @@ export function Home() {
               { number: '$500K+', label: 'Contract Value', icon: TrendingUp },
               { number: '100%', label: 'Client Satisfaction', icon: Star },
             ].map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <div key={index} className="text-center group stagger-item">
+                <div className="bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-professional-lg">
                   <stat.icon className="text-[#FDB913]" size={40} />
                 </div>
                 <div className="text-5xl font-black text-[#1E3A8A] mb-2">{stat.number}</div>
@@ -135,13 +135,13 @@ export function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Training Card */}
-            <Link to="/training" className="group">
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl h-full">
+            <Link to="/training" className="group card-hover">
+              <div className="relative overflow-hidden rounded-3xl shadow-professional-xl h-full">
                 <div className="absolute inset-0">
                   <img
                     src="https://images.unsplash.com/photo-1758691736067-b309ee3ef7b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB0cmFpbmluZyUyMGNsYXNzcm9vbSUyMGxlYXJuaW5nfGVufDF8fHx8MTc3MTE2MDA2MHww&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Training"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover image-zoom"
                   />
                 </div>
                 <div className="relative bg-gradient-to-t from-[#1E3A8A]/95 to-transparent p-8 h-full flex flex-col justify-end min-h-[400px]">
@@ -150,20 +150,20 @@ export function Home() {
                     Comprehensive training programs designed to enhance acquisition expertise and leadership capabilities.
                   </p>
                   <div className="flex items-center text-[#FDB913] font-bold">
-                    Explore Training Programs <ArrowRight className="ml-2" />
+                    Explore Training Programs <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
               </div>
             </Link>
 
             {/* Business Development Card */}
-            <Link to="/business-development" className="group">
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl h-full">
+            <Link to="/business-development" className="group card-hover">
+              <div className="relative overflow-hidden rounded-3xl shadow-professional-xl h-full">
                 <div className="absolute inset-0">
                   <img
                     src="https://images.unsplash.com/photo-1730382625230-3756013c515c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGdyb3d0aCUyMGRldmVsb3BtZW50JTIwc3RyYXRlZ3l8ZW58MXx8fHwxNzcxMTY5MjEzfDA&ixlib=rb-4.1.0&q=80&w=1080"
                     alt="Business Development"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover image-zoom"
                   />
                 </div>
                 <div className="relative bg-gradient-to-t from-[#FDB913]/95 to-transparent p-8 h-full flex flex-col justify-end min-h-[400px]">
@@ -172,7 +172,7 @@ export function Home() {
                     Strategic consulting and acquisition services that drive organizational excellence and mission success.
                   </p>
                   <div className="flex items-center text-[#1E3A8A] font-bold">
-                    View Our Services <ArrowRight className="ml-2" />
+                    View Our Services <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
               </div>
